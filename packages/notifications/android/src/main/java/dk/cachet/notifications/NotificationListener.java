@@ -37,6 +37,14 @@ public class NotificationListener extends NotificationListenerService {
       CharSequence title = extras.getCharSequence(Notification.EXTRA_TITLE);
       CharSequence text = extras.getCharSequence(Notification.EXTRA_TEXT);
 
+      if(title == null) {
+        title = '';
+      }
+
+      if(text == null) {
+        text = '';
+      }
+
       intent.putExtra(NOTIFICATION_TITLE, title.toString());
       intent.putExtra(NOTIFICATION_MESSAGE, text.toString());
     }
